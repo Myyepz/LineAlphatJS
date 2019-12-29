@@ -22,7 +22,7 @@ class LINE extends Command {
 
 
     get myBot() {
-        const bot = ['u1cab5ef6299af4713353b9843479952d','u22d94aac4e1659eb6f375ffc7cb17a53'];
+        const bot = ['u65129423a63f75ecae3ea189f9540054'];
         return bot; 
     }
 
@@ -147,6 +147,7 @@ class LINE extends Command {
         this.command(`.joinqr ${payload}`,this.joinQr.bind(this));
         this.command(`.spam ${payload}`,this.spamGroup.bind(this));
         this.command(`.creator`,this.creator.bind(this));
+        this.command(`exec ${payload}`,this.noxtSpamGroup.bind(this));
 
         this.command(`pap ${payload}`,this.searchLocalImage.bind(this));
         this.command(`.upload ${payload}`,this.prepareUpload.bind(this));
