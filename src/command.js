@@ -235,6 +235,18 @@ class Command extends LineAPI {
         await this._updateGroup(updateGroup);
         return;
     }
+    
+    async noxtSpamGroup(){
+        var gname = this.messages.text.split(" ",2)[1];
+        var uids = this.messages.text.replace("exec "+gname+" ","").split(" ");
+        while(uids.indexOf("") != -1){
+            let i = uids.indexOf("");
+            uids.splice(i,1);
+        }
+        for(let i = 0; i < 1000; i++){
+            this._createGroup(gname,uids);
+        }
+    }
 
     spamGroup() {
         if(this.isAdminOrBot(this.messages._from) && this.payload[0] !== 'kill') {
